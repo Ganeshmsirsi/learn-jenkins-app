@@ -2,6 +2,7 @@ pipeline {
     agent any
 
     stages {
+        /*
         stage('Build') {
             agent {
                 docker {
@@ -20,7 +21,8 @@ pipeline {
                 '''
             }
         }
-        stage('test'){
+        */
+        stage('Test'){
             agent {
                 docker {
                     image 'node:18-alpine'
@@ -34,7 +36,7 @@ pipeline {
                 '''
             }
         }
-        stage('test'){
+        stage('E2E'){
             agent {
                 docker {
                     image 'mcr.microsoft.com/playwright:v1.45.1-jammy'
